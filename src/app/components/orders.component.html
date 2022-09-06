@@ -1,0 +1,36 @@
+<h1>Order Form</h1>
+<div class="box-it">
+<form [formGroup]="orderForm" (ngSubmit)="addToCart()">
+    
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>
+                <input type="text" size="30" formControlName="name">
+            </td>
+        </tr>
+        <tr>
+            <td>Unit Price:</td>
+            <input type="text" size="30" formControlName="price">
+        </tr>
+        <tr>
+            <td>Quantity:</td>
+            <td>
+                <select formControlName="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <button type="submit" [disabled]="orderForm.invalid">Add</button>
+</form>
+</div>
